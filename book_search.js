@@ -173,4 +173,17 @@ console.log("Empty-Test:");
 const Empty_unit_test_answer = null;
 my_unit_tests("", twentyLeaguesIn, Empty_unit_test_answer);
 
+// Free test, User can input their own search term and text data base, but assume the 
+// the text data base is readable JSON object format like in the given example
+let User_Input_Term = "see";
+let User_Input_DB = twentyLeaguesIn;
+console.log("Free-Test:");
+console.log("Search Term = [",User_Input_Term,"], Text = [", User_Input_DB[0].Title, "]");
+const free_Test_Result = findSearchTermInBooks(User_Input_Term, User_Input_DB);
+if(free_Test_Result !== undefined && free_Test_Result.Results[0] !== undefined){
+  console.log("Term [",User_Input_Term,"] was found at ",free_Test_Result.Results[0]);
+}
+else{
+  console.log("The Term [",User_Input_Term,"] was not found.");
+}
 console.log("All unit tests are completed.");
